@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import os
 
-LABEL_DIR = 'data\labels'
+LABEL_DIR = 'data/labels'
 
 class_dict = dict()
 with open('train_classes.txt', 'r') as f:
@@ -34,6 +34,6 @@ def parseAnnotation(filename):
 xml_files = os.listdir(LABEL_DIR)
 with open('train_labels.txt', 'w') as f:
     for xml_file in xml_files:
-        path = LABEL_DIR + '\\' + xml_file
+        path = LABEL_DIR + '/' + xml_file
         line = parseAnnotation(path)
         f.write(line + '\n')
